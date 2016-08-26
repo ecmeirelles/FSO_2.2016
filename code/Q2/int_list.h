@@ -9,6 +9,8 @@ typedef struct list_node {
 
 
 typedef struct int_list {
+  int size;
+
   list_node *head;
   list_node *tail;
 } int_list;

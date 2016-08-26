@@ -5,6 +5,8 @@
 void list_init(int_list *list) {
   list->head = NULL;
   list->tail = NULL;
+
+  size = 0;
 }
 
 void add_empty_list(int_list *list, int number) {
@@ -16,6 +18,8 @@ void add_empty_list(int_list *list, int number) {
 
   list->head = new_element;
   list->tail = new_element;
+
+  size++;
 }
 
 void add_end_list(int_list *list, int number) {
@@ -28,6 +32,8 @@ void add_end_list(int_list *list, int number) {
   new_element->next = NULL;
 
   list->tail = new_element;
+
+  size++;
 }
 
 void print_list(int_list *list) {
