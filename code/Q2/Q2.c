@@ -22,46 +22,52 @@ int main(int argc, char *argv[]) {
   list->head = node;
   list_init(list);
 
-  if(strcmp(argv[1], "-d") == 0) {
-    sort = ASCENDING;
-    position = 2;
-  }
-
-  else if(strcmp(argv[1], "-r") == 0) {
-    sort = DESCENDING;
-    position = 2;
+  if(argc == 1) {
+    printf("[ERROR] Voce precisa adicionar a ordem de ordenação e/ou os numeros desejados.\n\n");
   }
 
   else {
-    sort = ASCENDING;
-    position = 1;
-  }
+    if(strcmp(argv[1], "-d") == 0) {
+      sort = ASCENDING;
+      position = 2;
+    }
 
-  for(int i = position; i < argc; i++) {
-    number = atoi(argv[i]);
-
-    if(list->head == NULL) {
-      add_empty_list(list, number);
+    else if(strcmp(argv[1], "-r") == 0) {
+      sort = DESCENDING;
+      position = 2;
     }
 
     else {
-      add_end_list(list, number);
+      sort = ASCENDING;
+      position = 1;
     }
+
+    for(int i = position; i < argc; i++) {
+      number = atoi(argv[i]);
+
+      if(list->head == NULL) {
+        add_empty_list(list, number);
+      }
+
+      else {
+        add_end_list(list, number);
+      }
+    }
+
+    switch(sort) {
+
+      case ASCENDING:
+        ascending_sort(list);
+      break;
+
+      case DESCENDING:
+        descending_sort(list);
+      break;
+    }
+
+    print_list(list);
+    list_end(list);
   }
-
-  switch(sort) {
-
-    case ASCENDING:
-      ascending_sort(list);
-    break;
-
-    case DESCENDING:
-      descending_sort(list);
-    break;
-  }
-
-  print_list(list);
-  list_end(list);
 
   return 0;
 }

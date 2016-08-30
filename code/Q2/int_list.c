@@ -34,11 +34,11 @@ void print_list(int_list *list) {
   list_node *node = list->head;
 
   if(list->head->next == NULL) {
-    printf("{ %d }", node->value);
+    printf("\nLista = { %d }\n", node->value);
   }
 
   else {
-    printf("{ ");
+    printf("\nLista = { ");
 
     while(node != list->tail) {
       printf("%d ", node->value);
