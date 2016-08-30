@@ -1,30 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "int_list.h"
+#include "sort.h"
 
 void ascending_sort(int_list *list) {
-  int size = list->size;
   list_node *node = list->head;
+  list_node *next_node = node->next;
 
-  if(list->head->next != NULL) {
-    while(node != NULL) {
-      list_node *aux_element = (list_node *) malloc(sizeof(list_node));
+  int aux_element;
 
-      if(node->value > node->next->value) {
-        aux_element->value = node->value;
-        node->value = node->next->value;
-        node->next->value = aux_element->value;
-
+  while(next_node != NULL){
+    while(next_node != node){
+      if(next_node->value < node->value){
+        aux_element = node->value;
+        node->value = next_node->value;
+        next_node->value = aux_element;
       }
 
-      free(aux_element);
       node = node->next;
     }
 
-    size--;
-
-    if(size != 0) {
-      ascending_sort(list);
-    }
+    node = list->head;
+    next_node = next_node->next;
   }
 }

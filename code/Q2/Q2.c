@@ -33,6 +33,7 @@ int main(int argc, char *argv[]) {
   }
 
   else {
+    sort = ASCENDING;
     position = 1;
   }
 
@@ -49,8 +50,8 @@ int main(int argc, char *argv[]) {
   }
 
   switch(sort) {
+
     case ASCENDING:
-      //TODO: Fix ascending sort
       ascending_sort(list);
     break;
 
