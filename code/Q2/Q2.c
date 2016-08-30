@@ -56,7 +56,7 @@ int main(int argc, char *argv[]) {
     break;
 
     case DESCENDING:
-      printf("TODO: Descending sort\n");
+      descending_sort(list);
     break;
   }
 

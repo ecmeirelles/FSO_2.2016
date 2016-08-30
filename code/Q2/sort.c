@@ -24,3 +24,25 @@ void ascending_sort(int_list *list) {
     next_node = next_node->next;
   }
 }
+
+void descending_sort(int_list *list) {
+  list_node *node = list->tail;
+  list_node *previous_node = node->previous;
+
+  int aux_element;
+
+  while(previous_node != NULL){
+    while(previous_node != node){
+      if(previous_node->value < node->value){
+        aux_element = node->value;
+        node->value = previous_node->value;
+        previous_node->value = aux_element;
+      }
+
+      node = node->previous;
+    }
+
+    node = list->tail;
+    previous_node = previous_node->previous;
+  }
+}
