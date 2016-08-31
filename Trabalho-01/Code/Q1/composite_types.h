@@ -1,3 +1,5 @@
+#define COMPOSITE_TYPES_H_
+
 typedef struct point {
   float coordinate_x;
   float coordinate_y;

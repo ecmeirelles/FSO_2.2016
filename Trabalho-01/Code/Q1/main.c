@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "composite_types.h"
+#include "data_entry.h"
+#include "geometric_operators.h"
 
 int main() {
 

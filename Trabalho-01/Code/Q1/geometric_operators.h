@@ -1,3 +1,5 @@
+#define GEOMETRIC_OPERATORS_H_
+
 void print_triangle_sides(Triangle triangle);
 float calcule_triangle_perimeter(Triangle triangle);
 float triangle_side(Point point_1, Point point_2);
