@@ -20,7 +20,7 @@ int main() {
 
     print_triangle_sides(triangle);
     perimeter = calcule_triangle_perimeter(triangle);
-    printf("\t\nO perimetro do triângulo é: %.2f\n", perimeter);
+    printf("\t\nO perímetro do triângulo é: %.2f\n", perimeter);
     triangle_area = calcule_triangle_area(triangle);
     printf("\t\nA área de triângulo é: %.2f \n\n", triangle_area);
 

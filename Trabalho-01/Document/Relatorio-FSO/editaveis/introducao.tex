@@ -1,7 +1,59 @@
 \chapter[Introdução]{Introdução}
 
+	Este trabalho tem como objetivo consolidar os conhecimentos adquiridos na disciplina de Fundamentos de Sistemas Operacionais.
+
+\section{Informações gerais}
+
+	Essa seção informa detalhes do ambiente de desenvolvimento e as ferramentas utilizadas.
+
+\subsection{Ambiente de desenvolvimento}
+
+	O sistema operacional utilizado foi o \textit{Linux} na distro Ubuntu 14.04. O \textit{Sublime} foi usado para a edição dos arquivos e o compilador foi o \textit{gcc} na versão  4.8.4.
+
+\section{Questões}
+
+	Para realizar a compilação das questões 1 e 2 execute o comando \textit{make} no diretório referente a questão. Esse comando irá gerar o arquivo executável \textit{triangle} para a questão 1 e \textit{Q2-Sort} para a questão 2.
+
+	Para gerar o executável da questão 3 execute o seguinte comando: gcc Q3.c -o Q3
+	Com isso será gerado um executável chamado Q3.
+
+	Não foi identificado nenhuma inconsistência nas questões.
+
+\subsection{Questão 1}
+
+	Após ter gerado o executável, rode o comando: ./triangle
+
+	O programa ira lhe pedir informações referentes as coordenadas do triangulo e depois irá validar se o triangulo é válido. Caso o triângulo seja um triângulo válido o programa informará: Os valor dos lados do triângulo, o perímetro e a área do triangulo. Caso o triângulo seja inválido, o sistemá informará ao usuário que os valores inseridos não correspondem a um triângulo válido.
+
+	\textbf{Caso de Teste válido:}
 
 
-\section{Contextualização}
+		1 Ponto x: 5; 1 Ponto y: 5; 2 Ponto x: 3; 2 Ponto y: 6; 3 Ponto x: 1; 3 Ponto y: 4.
+
+		Irá produzir os seguintes resultados:
+
+	 Os lados do triângulo são:
+
+		Lado A: 2.24, Lado B: 4.12, Lado C: 2.83
+
+	 O perímetro do triângulo é: 9.19
+
+	 A área de triângulo é: 3.00
+
+	\textbf{Caso de Teste inválido:}
+
+		Um caso em que dois pontos informados possuem as mesmas coordenadas:
+
+		1 Ponto x: 5; 1 Ponto y: 5; 2 Ponto x: 5; 2 Ponto y: 5; 3 Ponto x: 1; 3  Ponto y: 4;
+
+		O resultado será:
+
+		Valores informados não correspondem a um triângulo válido.
+
+\subsection{Questão 2}
+\subsection{Questão 3}
+
+
+
 
 
