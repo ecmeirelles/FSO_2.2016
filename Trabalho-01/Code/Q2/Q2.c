@@ -4,11 +4,6 @@
 #include "int_list.h"
 #include "sort.h"
 
-/* Escreva um programa que ordene uma lista de inteiros. A ordem de ordenação, bem como os inteiros a serem ordenados,
-deverão ser informados como parâmetros da linha de comando. Na ausência de uma switch (opção), a ordem deverá ser
-crescente; caso o usuário indique a opção -d, a ordem deverá ser crescente e, se indicar -r, a ordem deverá ser
-decrescente. */
-
 #define ASCENDING 0
 #define DESCENDING 1
 
@@ -42,7 +37,8 @@ int main(int argc, char *argv[]) {
       position = 1;
     }
 
-    for(int i = position; i < argc; i++) {
+    int i;
+    for(i = position; i < argc; i++) {
       number = atoi(argv[i]);
 
       if(list->head == NULL) {

@@ -1,7 +1,7 @@
 GCC = gcc
 FLAGS = -Wall
 
-all: data_entry.o geometric_operators.o main.o triangle clean
+all: data_entry.o geometric_operators.o main.o triangle
 
 triangle: data_entry.o geometric_operators.o main.o
 	$(GCC) $(FLAGS) -o triangle data_entry.o geometric_operators.o main.o -lm

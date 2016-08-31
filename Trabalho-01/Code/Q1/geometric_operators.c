@@ -5,9 +5,10 @@
 #include "geometric_operators.h"
 
 void print_triangle_sides(Triangle triangle) {
-  printf("Triangle side A: %.4f\n", triangle.side_a);
-  printf("Triangle side B: %.4f\n", triangle.side_b);
-  printf("Triangle side C: %.4f\n", triangle.side_c);
+  printf("\t\n Os lados do triângulo são: \n");
+  printf("\tLado A: %.2f\n", triangle.side_a);
+  printf("\tLado B: %.2f\n", triangle.side_b);
+  printf("\tLado C: %.2f\n", triangle.side_c);
 }
 
 float calcule_triangle_perimeter(Triangle triangle) {
@@ -99,7 +100,6 @@ float calcule_triangle_area(Triangle triangle) {
 
   float determinat = main_diagonal - secundary_diagonal;
   float area = abs(determinat)/2;
-  printf("AREA -- %f\n", area);
   return area;
 }
 
