@@ -12,7 +12,7 @@ main.o: main.c composite_types.h
 data_entry.o: data_entry.c composite_types.h data_entry.h
 	$(GCC) $(FLAGS) -c data_entry.c
 
-geometric.o: geometric_operators.c composite_types.h geometric_operators.h
+geometric_operators.o: geometric_operators.c composite_types.h geometric_operators.h
 	$(GCC) $(FLAGS) -c geometric_operators.c
 
 clean:
