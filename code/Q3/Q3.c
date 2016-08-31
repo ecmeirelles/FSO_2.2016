@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /* Escreva um programa em C que possua, como variáveis, os seguintes itens:
    -> double number1 = 7.3, number2; char s1[100], s2[100];
@@ -12,6 +13,7 @@
 ◦ Imprima o endereço de number1 na tela.
 ◦ Imprima o endereço armazenado em dPtr na tela .
 ◦ O valor impresso decorrente do enunciado que contempla o item anterior é igual ao valor do endereço gravado em dPrt?
+
 ◦ Leia uma string e a armazene no array s1. Copie a string armazenada em s1 para s2.
   Compare a string armazenada em s1 com a string armazenada em s2 e imprima o resultado na tela.
 ◦ Apense a string s2 à string s1. Imprima o resultado na tela.
@@ -22,6 +24,7 @@ int main() {
   double number1 = 7.3, number2;
   double *dPtr;
   char s1[100], s2[100];
+  int string_cmp, string_lenght;
 
   printf("\n## Brincando com numeros e ponteiros...\n");
   dPtr = &number1;
@@ -32,6 +35,25 @@ int main() {
 
   printf("\n* Valor do endereco de number1: %p\n", &number1);
   printf("* Valor do endereco de dPtr: %p\n", dPtr);
+
+  printf("\n## Brincando com strings...\n");
+  printf("Digite uma palavra qualquer: ");
+  scanf ( "%[^\n]", s1);
+
+  strcpy(s2,s1);
+  string_cmp = strcmp(s1, s2);
+  if(string_cmp < 0 || string_cmp > 0) {
+      printf("\nS1 [%s] é diferente de S2 [%s].\n", s1, s2);
+   }
+
+   else {
+      printf("\nS1 [%s] é igual a S2 [%s].\n", s1, s2);
+   }
+
+   strcat(s1, s2);
+   printf("Apos concatenar ambas as palavras, temos: %s\n", s1);
+   string_lenght = strlen(s1);
+   printf("A palavra [%s] possui o comprimento: %d\n\n", s1, string_lenght);
 
   return 0;
 }
