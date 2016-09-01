@@ -20,101 +20,191 @@
 
 	Além disso, o presente documento foi contruído através do \textit{LaTeX}.
 
-\section{Implementações}
+	\chapter[Implementação]{Implementação}
 
-	A implementação das questões 1 e 2 foi contruída a partir de um \textit{Makefile} com a finalidade de automatizar a
-	compilação de ambas, pois as mesmas possuem diversos ficheiros de inclusão (.h) e arquivos c (.c). Assim, para
-	realizar a compilação é necessária apenas a execução do comando \textit{make} no diretório referente a questão
-	(/Q1 ou /Q2). Este comando gerará o arquivo executável \textit{Q1-Triangle} e \textit{Q2-Sort} para as questões 1 e 2,
-	respectivamente.
+  A implementação das questões 1 e 2 foi contruída a partir de um \textit{Makefile} com a finalidade de automatizar a
+  compilação de ambas, pois as mesmas possuem diversos ficheiros de inclusão (.h) e arquivos c (.c). Assim, para
+  realizar a compilação é necessária apenas a execução do comando \textit{make} no diretório referente a questão
+  (/Q1 ou /Q2). Este comando gerará o arquivo executável \textit{Q1-Triangle} e \textit{Q2-Sort} para as questões 1 e 2,
+  respectivamente.
 
-	A questão 3, entretanto, é bastante simples e não necessitou da criação do \textit{Makefile}. Desse modo, a mesma
-	necessita apenas da execução do comando \textit{gcc Q3.c -o Q3-PointersAndStrings}. Este comando gerará um executável
-	chamado \textit{Q3-PointersAndStrings}.
+  A questão 3, entretanto, é bastante simples e não necessitou da criação do \textit{Makefile}. Desse modo, a mesma
+  necessita apenas da execução do comando \textit{gcc Q3.c -o Q3-PointersAndStrings}. Este comando gerará um executável
+  chamado \textit{Q3-PointersAndStrings}.
 
-	Não foi identificada nenhuma inconsistência nas questões.
+  Não foi identificada nenhuma inconsistência nas questões.
 
-\subsection{Questão 1}
+\section{Questão 1}
 
-	Após ter gerado o executável, a realização do comando \textit{./Q1-Triangle} é necessária.
+  Após ter gerado o executável, a realização do comando \textit{./Q1-Triangle} é necessária.
 
-	Primeiramente, o programa necessita das coordenadas cartesianas dos vértices do triângulo desejado. As coordenadas
-	serão adquiridas através de entradas digitadas pelo usuário em tempo de execução, de acordo com o que for pedido a
-	cada vez. Através dessas informações a aplicação irá verificar se o triângulo é válido.
+  Primeiramente, o programa necessita das coordenadas cartesianas dos vértices do triângulo desejado. As coordenadas
+  serão adquiridas através de entradas digitadas pelo usuário em tempo de execução, de acordo com o que for pedido a
+  cada vez. Através dessas informações a aplicação irá verificar se o triângulo é válido.
 
-	Caso o triângulo seja válido, o programa informará:
+  Caso o triângulo seja válido, o programa informará:
 
-	\begin{itemize}
+  \begin{itemize}
 
-		\item Valor de cada lado do triângulo;
-		\item Perímetro do triângulo;
-		\item Área do triângulo.
+    \item Valor de cada lado do triângulo;
+    \item Perímetro do triângulo;
+    \item Área do triângulo.
 
-	\end{itemize}
+  \end{itemize}
 
-	Caso o triângulo seja inválido, o sistemá informará a mensagem \textit{"Os valores inseridos não correspondem a um
-	triângulo válido"} ao usuário.
+  Caso o triângulo seja inválido, o sistemá informará a mensagem \textit{"Os valores inseridos não correspondem a um
+  triângulo válido"} ao usuário.
 
-	Para a realização da aplicação foram criados três arquivos .h (\textbf{composite\_types}, \textbf{data\_entry} e
-	\textbf{geometric\_operators}) e três arquivos .c (\textbf{data\_entry}, \textbf{geometric\_operators} e
-	\textbf{main}). O arquivo composite\_types.h define os pontos no plano cartesiano e o triângulo, ao passo que os
-	arquivos data\_entry.h e data\_entry.c compõem as funções de entrada. geometric\_operators.h e geometric\_operators.c,
-	como pode-se facilmente perceber, compreendem as funções relacionadas as operações geométricas. Finalmente, o arquivo
-	main.c é onde está presente a principal função do programa: \textit{int main()}.
+  Para a realização da aplicação foram criados três arquivos .h (\textbf{composite\_types}, \textbf{data\_entry} e
+  \textbf{geometric\_operators}) e três arquivos .c (\textbf{data\_entry}, \textbf{geometric\_operators} e
+  \textbf{main}). O arquivo composite\_types.h define os pontos no plano cartesiano e o triângulo, ao passo que os
+  arquivos data\_entry.h e data\_entry.c compõem as funções de entrada. geometric\_operators.h e geometric\_operators.c,
+  como pode-se facilmente perceber, compreendem as funções relacionadas as operações geométricas. Finalmente, o arquivo
+  main.c é onde está presente a principal função do programa: \textit{int main()}.
 
-	\subsubsection{Caso de Teste: Coordenadas Válidas}
+  \subsection{Caso de Teste: Coordenadas Válidas}
 
-	Caso o usuário informe valores de coordenadas onde o triângulo seja válido, ou seja, o mesmo possa ser gerado, o
-	programa irá executar corretamente, mostrando todas as informações. O usuário executaria os seguintes passos, já
-	informando os dados:
+  Caso o usuário informe valores de coordenadas onde o triângulo seja válido, ou seja, o mesmo possa ser gerado, o
+  programa irá executar corretamente, mostrando todas as informações. O usuário executaria os seguintes passos, já
+  informando os dados:
 
-	\begin{enumerate}
-		\item Informe a 1ª coordenada x: \textbf{5};
-		\item Informe a 1ª coordenada y: \textbf{5};
+  \begin{enumerate}
+    \item Informe a 1ª coordenada x: \textbf{5};
+    \item Informe a 1ª coordenada y: \textbf{5};
 
-		\item Informe a 2ª coordenada x: \textbf{3};
-		\item Informe a 2ª coordenada y: \textbf{6};
+    \item Informe a 2ª coordenada x: \textbf{3};
+    \item Informe a 2ª coordenada y: \textbf{6};
 
-		\item Informe a 3ª coordenada x: \textbf{1};
-		\item Informe a 3ª coordenada y: \textbf{4};
-	\end{enumerate}
-
-
-	Isto irá produzir os seguintes resultados:
-
-	\begin{itemize}
-  	\item Os lados do triângulo são:
-	  \begin{itemize}
-	    \item Lado A: 2.24
-	    \item Lado B: 4.12
-	    \item Lado C: 2.83
-	  \end{itemize}
-	  \item O perímetro do triângulo é: 9.19
-		\item A área de triângulo é: 3.00
-	\end{itemize}
-
-	\subsubsection{Caso de Teste - Coordenadas Inválidas}
-
-	Caso o usuário informe duas coordenadas cartesianas (x, y) iguais:
-
-	\begin{enumerate}
-		\item Informe a 1ª coordenada x: \textbf{5};
-		\item Informe a 1ª coordenada y: \textbf{5};
-
-		\item Informe a 2ª coordenada x: \textbf{5};
-		\item Informe a 2ª coordenada y: \textbf{5};
-
-		\item Informe a 3ª coordenada x: \textbf{1};
-		\item Informe a 3ª coordenada y: \textbf{4};
-	\end{enumerate}
-
-	Isto irá produzir o seguinte resultado:
-
-	\begin{itemize}
-  	\item Valores informados não correspondem a um triângulo válido.
-	\end{itemize}
-
-\subsection{Questão 2}
+    \item Informe a 3ª coordenada x: \textbf{1};
+    \item Informe a 3ª coordenada y: \textbf{4};
+  \end{enumerate}
 
 
-\subsection{Questão 3}
+  Isto irá produzir os seguintes resultados:
+
+  \begin{itemize}
+    \item Os lados do triângulo são:
+    \begin{itemize}
+      \item Lado A: 2.24
+      \item Lado B: 4.12
+      \item Lado C: 2.83
+    \end{itemize}
+    \item O perímetro do triângulo é: 9.19
+    \item A área de triângulo é: 3.00
+  \end{itemize}
+
+  \subsection{Caso de Teste - Coordenadas Inválidas}
+
+  Caso o usuário informe duas coordenadas cartesianas (x, y) iguais:
+
+  \begin{enumerate}
+    \item Informe a 1ª coordenada x: \textbf{5};
+    \item Informe a 1ª coordenada y: \textbf{5};
+
+    \item Informe a 2ª coordenada x: \textbf{5};
+    \item Informe a 2ª coordenada y: \textbf{5};
+
+    \item Informe a 3ª coordenada x: \textbf{1};
+    \item Informe a 3ª coordenada y: \textbf{4};
+  \end{enumerate}
+
+  Isto irá produzir o seguinte resultado:
+
+  \begin{itemize}
+    \item Valores informados não correspondem a um triângulo válido.
+  \end{itemize}
+
+\section{Questão 2}
+
+  Após ter gerado o executável, a realização do comando \textit{./Q2-Sort \{ordem de ordenação (optativo)\} \{lista de números
+  inteiros\}} é necessária.
+
+  Primeiramente, o programa necessita de uma ordem de ordenação e/ou uma lista de números inteiros. Estas informações
+  serão adquiridas através de chamada da aplicação onde tais dados serão informados como parâmetros na linha de comando.
+  Há duas diferentes ordens de ordenação, são elas:
+
+  \begin{enumerate}
+    \item \textbf{-d:} Números em ordem crescente;
+    \item \textbf{-r:} Números em ordem decrescente;
+  \end{enumerate}
+
+  Caso o usuário não informe o modo de ordenação, os números serão ordenados de forma crescente.
+
+  \textbf{Exemplo.} ./Q2-Sort -d 5 2 1 3 \textbf{ou} ./Q2-Sort -r 2 1 3 4 \textbf{ou} ./Q2-Sort 5 6 2 3
+
+  Para a realização da aplicação foram criados dois arquivos .h (\textbf{int\_list} e \textbf{sort} e três arquivos .c
+  (\textbf{int\_list}, \textbf{sort} e \textbf{main}). Os arquivos int\_list.h e int\_list.c compõem a definição e
+  funções relacionadas a uma lista duplamente encadeada, ao passo que os arquivos sort.h e sort.c compreendem as funções
+  de ordenação crescente e decrescente. Finalmente, o arquivo main.c é onde está presente a principal função do
+  programa: \textit{int main()}.
+
+  \textbf{OBSERVAÇÃO.} Foi escolhida uma lista duplamente encadeada para a implementação da solução em virtude de sua
+  eficiência em diferentes modos de ordenação, já que possui ponteiros para nós anteriores e posteriores, assim como sua
+  capacidade de alocação dinâmica na memória, o que dispensa o uso desnecessário de seus espaços.
+
+  \subsection{Caso de Teste: Modo de Ordenação -d}
+
+  Caso o usuário execute a aplicação passando a ordem de ordenação -d, ou seja, crescente, juntamente com os números
+  desejados, a chamada da aplicação deverá ser assim:
+
+  \begin{enumerate}
+    \item \$ ./Q2-Sort -d 8 3 5 2 6 1 4 7
+  \end{enumerate}
+
+
+  Isto irá produzir o seguinte resultado:
+
+  \begin{itemize}
+    \item Lista = \{ 1 2 3 4 5 6 7 8 \}
+  \end{itemize}
+
+  \subsection{Caso de Teste: Modo de Ordenação -r}
+
+  Caso o usuário execute a aplicação passando a ordem de ordenação -r, ou seja, decrescente, juntamente com os números
+  desejados, a chamada da aplicação deverá ser assim:
+
+  \begin{enumerate}
+    \item \$ ./Q2-Sort -r 8 3 5 2 6 1 4 7
+  \end{enumerate}
+
+
+  Isto irá produzir o seguinte resultado:
+
+  \begin{itemize}
+    \item Lista = \{ 8 7 6 5 4 3 2 1 \}
+  \end{itemize}
+
+  \subsection{Caso de Teste: Sem Modo de Ordenação}
+
+  Caso o usuário execute a aplicação sem passar a ordem de ordenação, o programa entenderá como um desejo por ordem
+  crescente dos números desejados, a chamada da aplicação deverá ser assim:
+
+  \begin{enumerate}
+    \item \$ ./Q2-Sort 4 2 5 3 1
+  \end{enumerate}
+
+
+  Isto irá produzir o seguinte resultado:
+
+  \begin{itemize}
+    \item Lista = \{ 1 2 3 4 5 \}
+  \end{itemize}
+
+    \subsection{Caso de Teste: Chamada sem Parâmetros}
+
+  Caso o usuário tente executar a aplicação sem passar nada como parâmetro na linha de comando, o programa não executará
+  e mostrará uma mensagem de erro. Se a chamada da aplicação for assim:
+
+  \begin{enumerate}
+    \item \$ ./Q2-Sort
+  \end{enumerate}
+
+
+  Isto irá produzir o seguinte resultado:
+
+  \begin{itemize}
+    \item \{ERROR\} Voce precisa adicionar a ordem de ordenação e/ou os numeros desejados.
+  \end{itemize}
+
+\section{Questão 3}
+
