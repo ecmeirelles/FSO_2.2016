@@ -4,22 +4,22 @@
 #include "data_entry.h"
 
 void input_data(Triangle *triangle) {
-  printf("\t\nInforme a 1º coordenada X: ");
+  printf("\nInforme a 1º coordenada X: ");
   scanf("%f", &triangle->point_1.coordinate_x);
 
-  printf("\t\nInforme a 1º coordenada Y: ");
+  printf("Informe a 1º coordenada Y: ");
   scanf("%f", &triangle->point_1.coordinate_y);
 
-  printf("\t\nInforme a 2º coordenada X: ");
+  printf("\nInforme a 2º coordenada X: ");
   scanf("%f", &triangle->point_2.coordinate_x);
 
-  printf("\t\nInforme a 2º coordenada Y: ");
+  printf("Informe a 2º coordenada Y: ");
   scanf("%f", &triangle->point_2.coordinate_y);
 
-  printf("\t\nInforme a 3º coordenada X: ");
+  printf("\nInforme a 3º coordenada X: ");
   scanf("%f", &triangle->point_3.coordinate_x);
 
-  printf("\t\nInforme a 3º coordenada Y: ");
+  printf("Informe a 3º coordenada Y: ");
   scanf("%f", &triangle->point_3.coordinate_y);
 
 }

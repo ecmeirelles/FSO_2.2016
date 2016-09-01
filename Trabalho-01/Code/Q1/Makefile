@@ -1,10 +1,10 @@
 GCC = gcc
 FLAGS = -Wall
 
-all: data_entry.o geometric_operators.o main.o triangle
+all: data_entry.o geometric_operators.o main.o Q1-Triangle
 
-triangle: data_entry.o geometric_operators.o main.o
-	$(GCC) $(FLAGS) -o triangle data_entry.o geometric_operators.o main.o -lm
+Q1-Triangle: data_entry.o geometric_operators.o main.o
+	$(GCC) $(FLAGS) -o Q1-Triangle data_entry.o geometric_operators.o main.o -lm
 
 main.o: main.c composite_types.h
 	$(GCC) $(FLAGS) -c main.c
@@ -16,4 +16,4 @@ geometric_operators.o: geometric_operators.c composite_types.h geometric_operato
 	$(GCC) $(FLAGS) -c geometric_operators.c
 
 clean:
-	-rm triangle *.o
+	-rm Q1-Triangle *.o

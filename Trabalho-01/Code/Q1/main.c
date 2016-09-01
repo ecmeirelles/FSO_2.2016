@@ -18,14 +18,15 @@ int main() {
 
   if (valid_triangle == 1) {
 
+    printf("\n## RESULTADOS:\n");
     print_triangle_sides(triangle);
     perimeter = calcule_triangle_perimeter(triangle);
-    printf("\t\nO perímetro do triângulo é: %.2f\n", perimeter);
+    printf("* O perímetro do triângulo é: %.2f\n", perimeter);
     triangle_area = calcule_triangle_area(triangle);
-    printf("\t\nA área de triângulo é: %.2f \n\n", triangle_area);
+    printf("* A área de triângulo é: %.2f \n\n", triangle_area);
 
   } else {
-    printf("Valores informados não correspondem a um triângulo válido\n");
+    printf("Valores informados não correspondem a um triângulo válido.\n");
   }
 
   return 0;

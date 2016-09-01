@@ -5,7 +5,7 @@
 #include "geometric_operators.h"
 
 void print_triangle_sides(Triangle triangle) {
-  printf("\t\n Os lados do triângulo são: \n");
+  printf("\t\n * Os lados do triângulo são: \n");
   printf("\tLado A: %.2f\n", triangle.side_a);
   printf("\tLado B: %.2f\n", triangle.side_b);
   printf("\tLado C: %.2f\n", triangle.side_c);

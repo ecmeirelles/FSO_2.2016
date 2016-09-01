@@ -1,59 +1,120 @@
 \chapter[Introdução]{Introdução}
 
-	Este trabalho tem como objetivo consolidar os conhecimentos adquiridos na disciplina de Fundamentos de Sistemas Operacionais.
+	Este trabalho tem como objetivo consolidar os conhecimentos adquiridos na disciplina de Fundamentos de Sistemas
+	Operacionais ofertada na Universidade de Brasília, Faculdade Gama.
 
-\section{Informações gerais}
+\section{Ambiente de Desenvolvimento}
 
-	Essa seção informa detalhes do ambiente de desenvolvimento e as ferramentas utilizadas.
+	Para uma melhor realização do trabalho, decidiu-se por unificar, entre a dupla, as ferramentas de desenvolvimento
+	utilizadas, as quais incluem sistema operacional, compilador, depurador e editor de texto. Portanto, o seguinte
+	ambiente de desenvolvimento foi estabelecido:
 
-\subsection{Ambiente de desenvolvimento}
+	\begin{itemize}
 
-	O sistema operacional utilizado foi o \textit{Linux} na distro Ubuntu 14.04. O \textit{Sublime} foi usado para a edição dos arquivos e o compilador foi o \textit{gcc} na versão  4.8.4.
+		\item O sistema operacional utilizado foi o \textit{Linux} na distro Ubuntu 16.04 LTS;
+		\item O código foi convertido através do compilador \textit{GCC} na versão 5.4.0;
+		\item O código foi depurado, quando necessário, com o debugger \textit{GDB} na versão 7.11.1;
+		\item A edição dos arquivos de código e texto foi realizada através do \textit{Sublime}.
 
-\section{Questões}
+	\end{itemize}
 
-	Para realizar a compilação das questões 1 e 2 execute o comando \textit{make} no diretório referente a questão. Esse comando irá gerar o arquivo executável \textit{triangle} para a questão 1 e \textit{Q2-Sort} para a questão 2.
+	Além disso, o presente documento foi contruído através do \textit{LaTeX}.
 
-	Para gerar o executável da questão 3 execute o seguinte comando: gcc Q3.c -o Q3
-	Com isso será gerado um executável chamado Q3.
+\section{Implementações}
 
-	Não foi identificado nenhuma inconsistência nas questões.
+	A implementação das questões 1 e 2 foi contruída a partir de um \textit{Makefile} com a finalidade de automatizar a
+	compilação de ambas, pois as mesmas possuem diversos ficheiros de inclusão (.h) e arquivos c (.c). Assim, para
+	realizar a compilação é necessária apenas a execução do comando \textit{make} no diretório referente a questão
+	(/Q1 ou /Q2). Este comando gerará o arquivo executável \textit{Q1-Triangle} e \textit{Q2-Sort} para as questões 1 e 2,
+	respectivamente.
+
+	A questão 3, entretanto, é bastante simples e não necessitou da criação do \textit{Makefile}. Desse modo, a mesma
+	necessita apenas da execução do comando \textit{gcc Q3.c -o Q3-PointersAndStrings}. Este comando gerará um executável
+	chamado \textit{Q3-PointersAndStrings}.
+
+	Não foi identificada nenhuma inconsistência nas questões.
 
 \subsection{Questão 1}
 
-	Após ter gerado o executável, rode o comando: ./triangle
+	Após ter gerado o executável, a realização do comando \textit{./Q1-Triangle} é necessária.
 
-	O programa ira lhe pedir informações referentes as coordenadas do triangulo e depois irá validar se o triangulo é válido. Caso o triângulo seja um triângulo válido o programa informará: Os valor dos lados do triângulo, o perímetro e a área do triangulo. Caso o triângulo seja inválido, o sistemá informará ao usuário que os valores inseridos não correspondem a um triângulo válido.
+	Primeiramente, o programa necessita das coordenadas cartesianas dos vértices do triângulo desejado. As coordenadas
+	serão adquiridas através de entradas digitadas pelo usuário em tempo de execução, de acordo com o que for pedido a
+	cada vez. Através dessas informações a aplicação irá verificar se o triângulo é válido.
 
-	\textbf{Caso de Teste válido:}
+	Caso o triângulo seja válido, o programa informará:
+
+	\begin{itemize}
+
+		\item Valor de cada lado do triângulo;
+		\item Perímetro do triângulo;
+		\item Área do triângulo.
+
+	\end{itemize}
+
+	Caso o triângulo seja inválido, o sistemá informará a mensagem \textit{"Os valores inseridos não correspondem a um
+	triângulo válido"} ao usuário.
+
+	Para a realização da aplicação foram criados três arquivos .h (\textbf{composite\_types}, \textbf{data\_entry} e
+	\textbf{geometric\_operators}) e três arquivos .c (\textbf{data\_entry}, \textbf{geometric\_operators} e
+	\textbf{main}). O arquivo composite\_types.h define os pontos no plano cartesiano e o triângulo, ao passo que os
+	arquivos data\_entry.h e data\_entry.c compõem as funções de entrada. geometric\_operators.h e geometric\_operators.c,
+	como pode-se facilmente perceber, compreendem as funções relacionadas as operações geométricas. Finalmente, o arquivo
+	main.c é onde está presente a principal função do programa: \textit{int main()}.
+
+	\subsubsection{Caso de Teste: Coordenadas Válidas}
+
+	Caso o usuário informe valores de coordenadas onde o triângulo seja válido, ou seja, o mesmo possa ser gerado, o
+	programa irá executar corretamente, mostrando todas as informações. O usuário executaria os seguintes passos, já
+	informando os dados:
+
+	\begin{enumerate}
+		\item Informe a 1ª coordenada x: \textbf{5};
+		\item Informe a 1ª coordenada y: \textbf{5};
+
+		\item Informe a 2ª coordenada x: \textbf{3};
+		\item Informe a 2ª coordenada y: \textbf{6};
+
+		\item Informe a 3ª coordenada x: \textbf{1};
+		\item Informe a 3ª coordenada y: \textbf{4};
+	\end{enumerate}
 
 
-		1 Ponto x: 5; 1 Ponto y: 5; 2 Ponto x: 3; 2 Ponto y: 6; 3 Ponto x: 1; 3 Ponto y: 4.
+	Isto irá produzir os seguintes resultados:
 
-		Irá produzir os seguintes resultados:
+	\begin{itemize}
+  	\item Os lados do triângulo são:
+	  \begin{itemize}
+	    \item Lado A: 2.24
+	    \item Lado B: 4.12
+	    \item Lado C: 2.83
+	  \end{itemize}
+	  \item O perímetro do triângulo é: 9.19
+		\item A área de triângulo é: 3.00
+	\end{itemize}
 
-	 Os lados do triângulo são:
+	\subsubsection{Caso de Teste - Coordenadas Inválidas}
 
-		Lado A: 2.24, Lado B: 4.12, Lado C: 2.83
+	Caso o usuário informe duas coordenadas cartesianas (x, y) iguais:
 
-	 O perímetro do triângulo é: 9.19
+	\begin{enumerate}
+		\item Informe a 1ª coordenada x: \textbf{5};
+		\item Informe a 1ª coordenada y: \textbf{5};
 
-	 A área de triângulo é: 3.00
+		\item Informe a 2ª coordenada x: \textbf{5};
+		\item Informe a 2ª coordenada y: \textbf{5};
 
-	\textbf{Caso de Teste inválido:}
+		\item Informe a 3ª coordenada x: \textbf{1};
+		\item Informe a 3ª coordenada y: \textbf{4};
+	\end{enumerate}
 
-		Um caso em que dois pontos informados possuem as mesmas coordenadas:
+	Isto irá produzir o seguinte resultado:
 
-		1 Ponto x: 5; 1 Ponto y: 5; 2 Ponto x: 5; 2 Ponto y: 5; 3 Ponto x: 1; 3  Ponto y: 4;
-
-		O resultado será:
-
-		Valores informados não correspondem a um triângulo válido.
+	\begin{itemize}
+  	\item Valores informados não correspondem a um triângulo válido.
+	\end{itemize}
 
 \subsection{Questão 2}
+
+
 \subsection{Questão 3}
-
-
-
-
-
