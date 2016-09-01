@@ -132,7 +132,7 @@
 
   \textbf{Exemplo.} ./Q2-Sort -d 5 2 1 3 \textbf{ou} ./Q2-Sort -r 2 1 3 4 \textbf{ou} ./Q2-Sort 5 6 2 3
 
-  Para a realização da aplicação foram criados dois arquivos .h (\textbf{int\_list} e \textbf{sort} e três arquivos .c
+  Para a realização da aplicação foram criados dois arquivos .h (\textbf{int\_list} e \textbf{sort}) e três arquivos .c
   (\textbf{int\_list}, \textbf{sort} e \textbf{main}). Os arquivos int\_list.h e int\_list.c compõem a definição e
   funções relacionadas a uma lista duplamente encadeada, ao passo que os arquivos sort.h e sort.c compreendem as funções
   de ordenação crescente e decrescente. Finalmente, o arquivo main.c é onde está presente a principal função do
@@ -192,19 +192,66 @@
 
     \subsection{Caso de Teste: Chamada sem Parâmetros}
 
-  Caso o usuário tente executar a aplicação sem passar nada como parâmetro na linha de comando, o programa não executará
-  e mostrará uma mensagem de erro. Se a chamada da aplicação for assim:
+	  Caso o usuário tente executar a aplicação sem passar nada como parâmetro na linha de comando, o programa não
+	  executará e mostrará uma mensagem de erro. Se a chamada da aplicação for assim:
 
-  \begin{enumerate}
-    \item \$ ./Q2-Sort
-  \end{enumerate}
+	  \begin{enumerate}
+	    \item \$ ./Q2-Sort
+	  \end{enumerate}
 
 
-  Isto irá produzir o seguinte resultado:
+	  Isto irá produzir o seguinte resultado:
 
-  \begin{itemize}
-    \item \{ERROR\} Voce precisa adicionar a ordem de ordenação e/ou os numeros desejados.
-  \end{itemize}
+	  \begin{itemize}
+	    \item \{ERROR\} Voce precisa adicionar a ordem de ordenação e/ou os numeros desejados.
+	  \end{itemize}
 
 \section{Questão 3}
 
+Após ter gerado o executável, a realização do comando \textit{./Q3-PointersAndStrings} é necessária.
+
+O programa aborda o uso de números, ponteiros e strings. Assim, o mesmo é composto pela declaração de algumas variáveis
+e a execução de funções ou bibliotecas para alterá-las. A aplicação:
+
+\begin{itemize}
+    \item Mostra o valor da variável apontada pelo ponteiro, partindo do mesmo;
+    \item Mostra o valor armazenado na segunda variável de número;
+    \item Mostra o endereço armazenado no vetor.
+
+    \item Mostra a comparação entre duas strings copiadas;
+    \item Mostra o resultado de uma string concatenada em outra;
+    \item Mostra o tamanho da uma das strings.
+  \end{itemize}
+
+  Para a realização da aplicação foi criado apenas um arquivo .c (\textbf{Q3}). Este arquivo compõem as declarações e
+  funções de bibliotecas relacionadas a manipulação de números, strings e ponteiros. Tudo é realizado dentro da
+  principal função do programa: \textit{int main()}.
+
+  \subsection{Caso de Teste: Execução do Programa}
+
+	  Por se tratar de um programa extremamente simples e automatizado, para a verificação dos resultados basta apenas
+	  executar a chamada da aplicação:
+
+	  \begin{enumerate}
+	    \item \$ ./Q3-PointersAndStrings
+	  \end{enumerate}
+
+	  E quando for pedido, digitar uma palavra qualquer. Exemplo, "Elefante" (sem as aspas).
+
+	  Isto irá produzir o seguinte resultado:
+
+	  \begin{itemize}
+	    \item \#\# Brincando com numeros e ponteiros...
+	    \item Valor da variavel number1: 7.30
+	    \item Valor da variavel number2: 7.30
+
+	    \item Valor do endereco de number1: 0x7ffe935bdbc8
+	    \item Valor do endereco de dPtr: 0x7ffe935bdbc8
+
+	    \item \#\# Brincando com strings...
+	    \item Digite uma palavra qualquer: \textbf{Elefante}
+
+	    \item S1 [Elefante] é igual a S2 [Elefante].
+	    \item Apos concatenar ambas as palavras, temos: ElefanteElefante
+	    \item A palavra [ElefanteElefante] possui o comprimento: 16
+	  \end{itemize}
