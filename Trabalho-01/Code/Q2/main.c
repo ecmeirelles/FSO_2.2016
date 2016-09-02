@@ -21,6 +21,12 @@ int main(int argc, char *argv[]) {
     printf("[ERROR] Voce precisa adicionar a ordem de ordenação e/ou os numeros desejados.\n\n");
   }
 
+  else if(argc == 2) {
+    if(strcmp(argv[1], "-d") == 0 || strcmp(argv[1], "-r") == 0) {
+      printf("[ERROR] Voce precisa adicionar os numeros desejados.\n\n");
+    }
+  }
+
   else {
     if(strcmp(argv[1], "-d") == 0) {
       sort = ASCENDING;
