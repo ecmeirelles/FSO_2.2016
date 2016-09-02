@@ -12,17 +12,17 @@
 	\begin{itemize}
 
 		\item O sistema operacional utilizado foi o \textit{Linux} na distro Ubuntu 16.04 LTS;
-		\item O código foi convertido através do compilador \textit{GCC} na versão 5.4.0;
+		\item O código foi convertido com o compilador \textit{GCC} na versão 5.4.0;
 		\item O código foi depurado, quando necessário, com o debugger \textit{GDB} na versão 7.11.1;
-		\item A edição dos arquivos de código e texto foi realizada através do \textit{Sublime}.
+		\item A edição dos arquivos de código e texto foi realizada com o \textit{Sublime}.
 
 	\end{itemize}
 
-	Além disso, o presente documento foi contruído através do \textit{LaTeX}.
+	Além disso, o presente documento foi construído através do \textit{LaTeX}.
 
 	\chapter[Implementação]{Implementação}
 
-  A implementação das questões 1 e 2 foi contruída a partir de um \textit{Makefile} com a finalidade de automatizar a
+  A implementação das questões 1 e 2 foi construída a partir de um \textit{Makefile} com a finalidade de automatizar a
   compilação de ambas, pois as mesmas possuem diversos ficheiros de inclusão (.h) e arquivos c (.c). Assim, para
   realizar a compilação é necessária apenas a execução do comando \textit{make} no diretório referente a questão
   (/Q1 ou /Q2). Este comando gerará o arquivo executável \textit{Q1-Triangle} e \textit{Q2-Sort} para as questões 1 e 2,
@@ -203,7 +203,7 @@
 	  Isto irá produzir o seguinte resultado:
 
 	  \begin{itemize}
-	    \item \{ERROR\} Voce precisa adicionar a ordem de ordenação e/ou os numeros desejados.
+	    \item \{ERROR\} Você precisa adicionar a ordem de ordenação e/ou os números desejados.
 	  \end{itemize}
 
 \section{Questão 3}
@@ -216,7 +216,8 @@ e a execução de funções ou bibliotecas para alterá-las. A aplicação:
 \begin{itemize}
     \item Mostra o valor da variável apontada pelo ponteiro, partindo do mesmo;
     \item Mostra o valor armazenado na segunda variável de número;
-    \item Mostra o endereço armazenado no vetor.
+    \item Mostra o endereço da variável.
+    \item Mostra o endereço armazenado no ponteiro.
 
     \item Mostra a comparação entre duas strings copiadas;
     \item Mostra o resultado de uma string concatenada em outra;
@@ -241,12 +242,12 @@ e a execução de funções ou bibliotecas para alterá-las. A aplicação:
 	  Isto irá produzir o seguinte resultado:
 
 	  \begin{itemize}
-	    \item \#\# Brincando com numeros e ponteiros...
-	    \item Valor da variavel number1: 7.30
-	    \item Valor da variavel number2: 7.30
+	    \item \#\# Brincando com números e ponteiros...
+	    \item Valor da variável number1: 7.30
+	    \item Valor da variável number2: 7.30
 
-	    \item Valor do endereco de number1: 0x7ffe935bdbc8
-	    \item Valor do endereco de dPtr: 0x7ffe935bdbc8
+	    \item Valor do endereço de number1: 0x7ffe935bdbc8
+	    \item Valor do endereço de dPtr: 0x7ffe935bdbc8
 
 	    \item \#\# Brincando com strings...
 	    \item Digite uma palavra qualquer: \textbf{Elefante}
@@ -255,3 +256,8 @@ e a execução de funções ou bibliotecas para alterá-las. A aplicação:
 	    \item Apos concatenar ambas as palavras, temos: ElefanteElefante
 	    \item A palavra [ElefanteElefante] possui o comprimento: 16
 	  \end{itemize}
+
+
+\section[Referencial Teórico]{Referencial Teórico}
+
+  O livro \textit{Advanced linux programming} \cite{advancedlinux} foi utilizado para auxiliar na aquisição de conhecimento, especialmente em relação a construção do \textit{Makefile} e o sistema de \textit{debugger}.
